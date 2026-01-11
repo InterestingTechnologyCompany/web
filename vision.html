@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비전 - Planty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'planty-green': {
+                            50: '#E8F5E9', 100: '#C8E6C9', 200: '#A5D6A7', 300: '#81C784',
+                            400: '#66BB6A', 500: '#4CAF50', 600: '#43A047', 700: '#388E3C',
+                            800: '#2E7D32', 900: '#1B5E20',
+                        },
+                        'planty-earth': {
+                            50: '#EFEBE9', 100: '#D7CCC8', 200: '#BCAAA4',
+                            300: '#A1887F', 400: '#8D6E63', 500: '#795548',
+                        },
+                        'planty-beige': { 50: '#FAFAF6', 100: '#F5F5DC', 200: '#E8E4C9', }
+                    },
+                    fontFamily: { 'sans': ['Noto Sans KR', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .vision-gradient { background: linear-gradient(135deg, #1B5E20 0%, #0D3B0F 50%, #1a1a2e 100%); }
+        .data-line { background: linear-gradient(90deg, transparent, #4CAF50, transparent); height: 1px; animation: data-flow 3s linear infinite; }
+        @keyframes data-flow { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        /* Team card hover */
+        .team-card { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        /* Modal */
+        .modal-overlay { opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content { transform: scale(0.9) translateY(20px); transition: transform 0.3s ease; }
+        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-planty-beige-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa-solid fa-seedling text-planty-green-700 text-2xl"></i>
+                    <span class="text-2xl font-bold text-planty-green-800">Planty</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="service.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">이용 방법</a>
+                    <a href="vision.html" class="text-planty-green-700 font-semibold">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full hover:bg-planty-green-800 transition-all transform hover:scale-105 font-medium">사전 예약</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-planty-green-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="service.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">이용 방법</a>
+                    <a href="vision.html" class="text-planty-green-700 font-semibold">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full text-center hover:bg-planty-green-800 transition-all font-medium">사전 예약</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero - Vision -->
+    <section class="vision-gradient min-h-[70vh] flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-px data-line"></div>
+            <div class="absolute top-20 left-0 w-full h-px data-line" style="animation-delay: 0.5s;"></div>
+            <div class="absolute top-40 left-0 w-full h-px data-line" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-0 w-full h-px data-line" style="animation-delay: 1.5s;"></div>
+            <div class="absolute bottom-20 left-0 w-full h-px data-line" style="animation-delay: 2s;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 text-center">
+            <span class="inline-block bg-white/10 text-planty-green-300 px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-white/20">
+                <i class="fa-solid fa-rocket mr-2"></i>Vision
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
+                <span class="text-planty-green-300">AWS</span> of Agriculture
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                우리는 단순한 원격 텃밭이 아닙니다.<br>
+                농업의 미래를 데이터로 만들어갑니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        누구나 농부가 될 수 있는 <span class="text-planty-green-700">세상</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        공간이 없어서, 시간이 없어서 포기했던 텃밭 생활.
+                        Planty는 <strong>당신의 손끝에서</strong> 그 꿈을 현실로 만들어 드립니다.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        씨앗이 싹트고, 잎이 자라고, 열매가 맺히는 그 순간들을
+                        놓치지 않고 함께할 수 있어요. 당신만의 속도로, 당신만의 방식으로.
+                    </p>
+                </div>
+                <div class="fade-in grid grid-cols-2 gap-6">
+                    <div class="bg-planty-green-50 rounded-3xl p-8 text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-planty-green-700 mb-2">Num</p>
+                        <p class="text-gray-600 font-medium">재배 데이터 포인트</p>
+                    </div>
+                    <div class="bg-planty-green-50 rounded-3xl p-8 text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-planty-green-700 mb-2">Num+</p>
+                        <p class="text-gray-600 font-medium">분석된 작물 종류</p>
+                    </div>
+                    <div class="bg-planty-green-50 rounded-3xl p-8 text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-planty-green-700 mb-2">24/7</p>
+                        <p class="text-gray-600 font-medium">AI 모니터링</p>
+                    </div>
+                    <div class="bg-planty-green-50 rounded-3xl p-8 text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-planty-green-700 mb-2">98.6%+</p>
+                        <p class="text-gray-600 font-medium">수확 예측 정확도</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="py-20 bg-planty-beige-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">로드맵</h2>
+                <p class="text-xl text-gray-600">Planty가 그리는 미래</p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="fade-in flex items-start gap-6">
+                    <div class="w-24 flex-shrink-0 text-right">
+                        <span class="text-planty-green-700 font-bold">2026</span>
+                    </div>
+                    <div class="w-4 h-4 bg-planty-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm flex-1">
+                        <h3 class="font-bold text-gray-900 mb-2">서비스 런칭 & 고객층 확대</h3>
+                        <p class="text-gray-600">농장 오픈, 1만 MAB (Montly Active Boxes) 시작</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in flex items-start gap-6">
+                    <div class="w-24 flex-shrink-0 text-right">
+                        <span class="text-planty-green-700 font-bold">2027</span>
+                    </div>
+                    <div class="w-4 h-4 bg-planty-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm flex-1">
+                        <h3 class="font-bold text-gray-900 mb-2">전국 확대 & B2B 서비스</h3>
+                        <p class="text-gray-600">전국 5개 거점 농장, 기업/학교 대상 서비스 런칭</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in flex items-start gap-6">
+                    <div class="w-24 flex-shrink-0 text-right">
+                        <span class="text-planty-green-700 font-bold">2028</span>
+                    </div>
+                    <div class="w-4 h-4 bg-planty-green-500 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm flex-1">
+                        <h3 class="font-bold text-gray-900 mb-2">농업 데이터 플랫폼</h3>
+                        <p class="text-gray-600">축적된 데이터 기반 스마트팜 솔루션 API 제공</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in flex items-start gap-6">
+                    <div class="w-24 flex-shrink-0 text-right">
+                        <span class="text-gray-400 font-bold">2030+</span>
+                    </div>
+                    <div class="w-4 h-4 bg-gray-300 rounded-full mt-1.5 flex-shrink-0"></div>
+                    <div class="bg-gradient-to-r from-planty-green-800 to-planty-green-900 rounded-2xl p-6 shadow-sm flex-1 text-white">
+                        <h3 class="font-bold mb-2 text-black">🚀 우주 농업 R&D</h3>
+                        <p class="text-planty-green-100">인류가 우주에서 식량을 생산할 때, Planty가 그곳에 있을 것입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team / About -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">팀 소개</h2>
+                <p class="text-xl text-gray-600">농업과 기술의 교차점에서</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="fade-in text-center team-card bg-planty-beige-50 rounded-3xl p-8" onclick="openModal('donghun')">
+                    <div class="w-32 h-32 bg-planty-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <i class="fa-solid fa-user text-planty-green-700 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">최동훈</h3>
+                    <p class="text-planty-green-700 font-medium mb-3">CEO</p>
+                    <p class="text-gray-600 text-sm">경<br>력 </p>
+                    <p class="text-xs text-planty-green-600 mt-4"><i class="fa-solid fa-hand-pointer mr-1"></i>클릭해서 더 보기</p>
+                </div>
+                <div class="fade-in text-center team-card bg-planty-beige-50 rounded-3xl p-8" onclick="openModal('hyunjae')">
+                    <div class="w-32 h-32 bg-planty-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <i class="fa-solid fa-user text-planty-green-700 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">정현재</h3>
+                    <p class="text-planty-green-700 font-medium mb-3">CTO</p>
+                    <p class="text-gray-600 text-sm">Kplr<br>SWE</p>
+                    <p class="text-xs text-planty-green-600 mt-4"><i class="fa-solid fa-hand-pointer mr-1"></i>클릭해서 더 보기</p>
+                </div>
+                <div class="fade-in text-center team-card bg-planty-beige-50 rounded-3xl p-8" onclick="openModal('cpo')">
+                    <div class="w-32 h-32 bg-planty-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <i class="fa-solid fa-user text-planty-green-700 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">누군가</h3>
+                    <p class="text-planty-green-700 font-medium mb-3">CPO (Chief Plant Officer)</p>
+                    <p class="text-gray-600 text-sm">30년 경력 농업 전문가<br>유기농 인증 컨설턴트</p>
+                    <p class="text-xs text-planty-green-600 mt-4"><i class="fa-solid fa-hand-pointer mr-1"></i>클릭해서 더 보기</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Modals -->
+    <div id="modal-donghun" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" onclick="closeModal('donghun')">
+        <div class="modal-content bg-white rounded-3xl max-w-lg w-full p-8 md:p-10" onclick="event.stopPropagation()">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl" onclick="closeModal('donghun')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-28 h-28 bg-planty-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <i class="fa-solid fa-user text-planty-green-700 text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">최동훈</h3>
+                <p class="text-planty-green-700 font-medium mb-6">CEO & Founder</p>
+                <p class="text-xl text-gray-700 italic mb-6">"신선한 채소가 이렇게까지 어려울 일인가?"</p>
+                <div class="text-left text-gray-600 space-y-3 text-sm">
+                    <p>학교 식당에서 나오는 야채 상태가 너무 안 좋았습니다. 신선한 야채를 위해서는 멀리 떨어진 마트에 가야 했어요. '이러면 차라리 내가 직접 키우고 싶다'는 생각이 들었어요.</p>
+                    <p>그런데 기숙사에 텃밭을 만들 수는 없잖아요. 그래서 생각했습니다. 원격으로 텃밭을 가꿀 수 있으면 어떨까?</p>
+                    <p>제가 아는 모든 것들을 모아 Planty를 만들었습니다. 공간이 없어서 포기했던 모든 사람들을 위해.</p>
+                </div>
+            </div>
+            <button class="mt-8 w-full py-3 bg-planty-green-700 text-white rounded-full font-medium hover:bg-planty-green-800 transition-colors" onclick="closeModal('donghun')">
+                닫기
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-hyunjae" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" onclick="closeModal('hyunjae')">
+        <div class="modal-content bg-white rounded-3xl max-w-lg w-full p-8 md:p-10" onclick="event.stopPropagation()">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl" onclick="closeModal('hyunjae')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-28 h-28 bg-planty-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <i class="fa-solid fa-user text-planty-green-700 text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">정현재</h3>
+                <p class="text-planty-green-700 font-medium mb-6">CTO & Cofounder</p>
+                <p class="text-xl text-gray-700 italic mb-6">"기술은 복잡함을 단순하게 만들 때 가치가 있습니다."</p>
+                <div class="text-left text-gray-600 space-y-3 text-sm">
+                    <p>Kplr에서 대규모 분산 시스템을 설계하고 운영했습니다.</p>
+                    <p>수천 대의 서버를 관리하던 경험을 수천 개의 화분을 관리하는 시스템에 적용했습니다. 생각보다 비슷한 점이 많더라고요.</p>
+                    <p>사용자가 '어떻게 이게 가능하지?'라고 느끼는 순간을 만드는 것이 목표입니다.</p>
+                </div>
+            </div>
+            <button class="mt-8 w-full py-3 bg-planty-green-700 text-white rounded-full font-medium hover:bg-planty-green-800 transition-colors" onclick="closeModal('hyunjae')">
+                닫기
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-cpo" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" onclick="closeModal('cpo')">
+        <div class="modal-content bg-white rounded-3xl max-w-lg w-full p-8 md:p-10" onclick="event.stopPropagation()">
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl" onclick="closeModal('cpo')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-28 h-28 bg-planty-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <i class="fa-solid fa-user text-planty-green-700 text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">누군가</h3>
+                <p class="text-planty-green-700 font-medium mb-6">CPO (Chief Plant Officer)</p>
+                <p class="text-xl text-gray-700 italic mb-6">"식물은 거짓말을 하지 않습니다."</p>
+                <div class="text-left text-gray-600 space-y-3 text-sm">
+                    <p>30년간 농업 현장에서 흙과 함께 살아왔습니다.</p>
+                    <p>유기농 인증 컨설턴트로 활동하며 수백 개의 농장이 지속 가능한 농업을 실천할 수 있도록 도왔습니다.</p>
+                    <p>젊은 창업자들의 열정에 반해 합류했고, 기술과 경험이 만나면 어떤 일이 일어나는지 보여드리겠습니다.</p>
+                </div>
+            </div>
+            <button class="mt-8 w-full py-3 bg-planty-green-700 text-white rounded-full font-medium hover:bg-planty-green-800 transition-colors" onclick="closeModal('cpo')">
+                닫기
+            </button>
+        </div>
+    </div>
+
+    <!-- Investor Contact -->
+    <section id="investor" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <span class="inline-block bg-planty-green-700/30 text-planty-green-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fa-solid fa-handshake mr-2"></i>For Investors
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">투자 문의</h2>
+                <p class="text-xl text-gray-400">
+                    Planty와 함께 농업의 미래를 만들어갈 파트너를 찾습니다
+                </p>
+            </div>
+            
+            <div class="fade-in bg-gray-800 rounded-3xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-planty-green-300 mb-4">현재 라운드</h3>
+                        <p class="text-3xl font-bold mb-2">Seed</p>
+                        <p class="text-gray-400">목표 투자금: 10억원</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-planty-green-300 mb-4">주요 지표</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• MAU 50,000+ (목표)</li>
+                            <li>• MRR 월 2억원 (목표)</li>
+                            <li>• 재구독률 85%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <h3 class="text-lg font-semibold text-planty-green-300 mb-4">IR 자료 요청 및 미팅</h3>
+                    <p class="text-gray-400 mb-6">
+                        IR 덱, 사업계획서, 재무제표 등 상세 자료가 필요하시면 아래로 연락해주세요.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="mailto:invest@planty.farm" class="inline-flex items-center justify-center bg-planty-green-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-planty-green-600 transition-all">
+                            <i class="fa-solid fa-envelope mr-3"></i>
+                            invest@planty.farm
+                        </a>
+                        <a href="tel:02-1234-5678" class="inline-flex items-center justify-center bg-gray-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-600 transition-all">
+                            <i class="fa-solid fa-phone mr-3"></i>
+                            02-1234-5678
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fade-in mt-12 text-center">
+                <p class="text-gray-500 text-sm">
+                    <i class="fa-solid fa-shield-halved mr-2"></i>
+                    모든 투자 문의는 비밀이 보장되며, NDA 체결 후 상세 자료를 제공해드립니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fa-solid fa-seedling text-planty-green-500 text-xl"></i>
+                    <span class="text-xl font-bold text-white">Planty</span>
+                </div>
+                <p class="text-sm text-gray-500">© 2026 Planty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Modal functions
+        function openModal(id) {
+            document.getElementById('modal-' + id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            document.getElementById('modal-' + id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

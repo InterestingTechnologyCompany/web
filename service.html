@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스 소개 - Planty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'planty-green': {
+                            50: '#E8F5E9', 100: '#C8E6C9', 200: '#A5D6A7', 300: '#81C784',
+                            400: '#66BB6A', 500: '#4CAF50', 600: '#43A047', 700: '#388E3C',
+                            800: '#2E7D32', 900: '#1B5E20',
+                        },
+                        'planty-earth': {
+                            50: '#EFEBE9', 100: '#D7CCC8', 200: '#BCAAA4',
+                            300: '#A1887F', 400: '#8D6E63', 500: '#795548',
+                        },
+                        'planty-beige': { 50: '#FAFAF6', 100: '#F5F5DC', 200: '#E8E4C9', }
+                    },
+                    fontFamily: { 'sans': ['Noto Sans KR', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-planty-beige-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa-solid fa-seedling text-planty-green-700 text-2xl"></i>
+                    <span class="text-2xl font-bold text-planty-green-800">Planty</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="service.html" class="text-planty-green-700 font-semibold">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">이용 방법</a>
+                    <a href="vision.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full hover:bg-planty-green-800 transition-all transform hover:scale-105 font-medium">사전 예약</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-planty-green-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="service.html" class="text-planty-green-700 font-semibold">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">이용 방법</a>
+                    <a href="vision.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full text-center hover:bg-planty-green-800 transition-all font-medium">사전 예약</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-planty-green-50 to-planty-beige-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block bg-planty-green-100 text-planty-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <i class="fa-solid fa-seedling mr-2"></i>Service
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                원격 농장 서비스, <span class="text-planty-green-700">Planty</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                공간과 시간의 제약 없이, 스마트폰 하나로 나만의 텃밭을 가꾸세요.
+            </p>
+        </div>
+    </section>
+
+    <!-- What is Planty -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Planty가 뭔가요?</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                        Planty는 <strong class="text-planty-green-700">원격 농장 서비스</strong>입니다. 
+                        실제 농장에 당신만의 구획이 배정되고, 스마트폰으로 작물을 관찰하고 돌볼 수 있어요.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                        앱에서 버튼을 누르면 실제로 물이 공급되고, 다 자란 작물은 신선하게 배송됩니다.
+                        마치 게임처럼 쉽지만, 수확물은 100% 진짜예요.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-planty-green-50 text-planty-green-700 px-4 py-2 rounded-full text-sm font-medium">🌱 실제 농장</span>
+                        <span class="bg-planty-green-50 text-planty-green-700 px-4 py-2 rounded-full text-sm font-medium">📱 앱으로 관리</span>
+                        <span class="bg-planty-green-50 text-planty-green-700 px-4 py-2 rounded-full text-sm font-medium">🚚 집으로 배송</span>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=800&h=600&fit=crop" 
+                         alt="스마트 농장" class="rounded-3xl shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="py-20 bg-planty-beige-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">핵심 기능</h2>
+                <p class="text-xl text-gray-600">Planty가 제공하는 특별한 경험</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="fade-in glass-card rounded-3xl p-8 text-center hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-planty-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-video text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">24시간 라이브캠</h3>
+                    <p class="text-gray-600">언제든 내 작물의 모습을 실시간으로 확인할 수 있어요.</p>
+                </div>
+                
+                <div class="fade-in glass-card rounded-3xl p-8 text-center hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-planty-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-droplet text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">원격 물주기</h3>
+                    <p class="text-gray-600">앱에서 터치 한 번이면 실제 농장에 물이 공급됩니다.</p>
+                </div>
+                
+                <div class="fade-in glass-card rounded-3xl p-8 text-center hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-planty-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-bell text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">스마트 알림</h3>
+                    <p class="text-gray-600">AI가 최적의 케어 타이밍을 분석해 알려드려요.</p>
+                </div>
+                
+                <div class="fade-in glass-card rounded-3xl p-8 text-center hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-planty-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-truck text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">신선 배송</h3>
+                    <p class="text-gray-600">수확한 작물을 신선하게 포장해 집 앞까지 배송해요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Crops -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">재배 가능한 작물</h2>
+                <p class="text-xl text-gray-600">다양한 작물 중에서 원하는 것을 선택하세요</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="fade-in bg-planty-green-50 rounded-2xl p-6 text-center hover:bg-planty-green-100 transition-colors">
+                    <span class="text-4xl mb-3 block">🥬</span>
+                    <p class="font-medium text-gray-800">상추</p>
+                    <p class="text-sm text-gray-500">4주</p>
+                </div>
+                <div class="fade-in bg-planty-green-50 rounded-2xl p-6 text-center hover:bg-planty-green-100 transition-colors">
+                    <span class="text-4xl mb-3 block">🌿</span>
+                    <p class="font-medium text-gray-800">바질</p>
+                    <p class="text-sm text-gray-500">3주</p>
+                </div>
+                <div class="fade-in bg-planty-green-50 rounded-2xl p-6 text-center hover:bg-planty-green-100 transition-colors">
+                    <span class="text-4xl mb-3 block">🍅</span>
+                    <p class="font-medium text-gray-800">방울토마토</p>
+                    <p class="text-sm text-gray-500">8주</p>
+                </div>
+                <div class="fade-in bg-planty-green-50 rounded-2xl p-6 text-center hover:bg-planty-green-100 transition-colors">
+                    <span class="text-4xl mb-3 block">🥒</span>
+                    <p class="font-medium text-gray-800">오이</p>
+                    <p class="text-sm text-gray-500">6주</p>
+                </div>
+                <div class="fade-in bg-planty-green-50 rounded-2xl p-6 text-center hover:bg-planty-green-100 transition-colors">
+                    <span class="text-4xl mb-3 block">🌶️</span>
+                    <p class="font-medium text-gray-800">고추</p>
+                    <p class="text-sm text-gray-500">10주</p>
+                </div>
+                <div class="fade-in bg-planty-green-50 rounded-2xl p-6 text-center hover:bg-planty-green-100 transition-colors">
+                    <span class="text-4xl mb-3 block">🥕</span>
+                    <p class="font-medium text-gray-800">당근</p>
+                    <p class="text-sm text-gray-500">12주</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 mt-8">+ 더 많은 작물이 계속 추가됩니다</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-planty-green-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">지금 바로 시작하세요</h2>
+            <p class="text-xl text-planty-green-100 mb-8">사전 예약 시 첫 작물 무료 + 배송비 1회 무료</p>
+            <a href="index.html#reserve" class="inline-flex items-center bg-white text-planty-green-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-planty-green-50 transition-all transform hover:scale-105 shadow-lg">
+                <i class="fa-solid fa-hand-holding-seedling mr-3"></i>
+                사전 예약하기
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fa-solid fa-seedling text-planty-green-500 text-xl"></i>
+                    <span class="text-xl font-bold text-white">Planty</span>
+                </div>
+                <p class="text-sm text-gray-500">© 2026 Planty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        // Fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
