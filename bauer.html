@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bauer - Planty AI</title>
+    <meta name="description" content="Bauer AI - Planty의 스마트 농업 어시스턴트. 최적의 재배 환경을 자동으로 관리">
+    <meta name="keywords" content="스마트팜, 원격텃밭, IoT, 채소재배, AI농업, 스마트농업">
+    <meta property="og:title" content="Bauer - Planty AI">
+    <meta property="og:description" content="Planty의 스마트 농업 어시스턴트. 최적의 재배 환경을 자동으로 관리">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://planty.farm/bauer.html">
+    <meta property="og:image" content="https://planty.farm/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://planty.farm/bauer.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-planty-beige-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa-solid fa-seedling text-planty-green-700 text-2xl"></i>
+                    <span class="text-2xl font-bold text-planty-green-800">Planty</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="service.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.service">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.howItWorks">이용 방법</a>
+                    <a href="bauer.html" class="text-planty-green-700 font-semibold">Bauer</a>
+                    <a href="vision.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.vision">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.pricing">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full hover:bg-planty-green-800 transition-all transform hover:scale-105 font-medium" data-i18n="nav.reserve">사전 예약</a>
+                    <div class="flex items-center space-x-1 text-sm border-l pl-6 ml-2 border-gray-200">
+                        <button data-lang-toggle="ko" class="px-2 py-1 rounded hover:bg-gray-100 transition-colors font-bold text-planty-green-700">KO</button>
+                        <span class="text-gray-300">|</span>
+                        <button data-lang-toggle="en" class="px-2 py-1 rounded hover:bg-gray-100 transition-colors text-gray-500">EN</button>
+                    </div>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-planty-green-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="service.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.service">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.howItWorks">이용 방법</a>
+                    <a href="bauer.html" class="text-planty-green-700 font-semibold">Bauer</a>
+                    <a href="vision.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.vision">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.pricing">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full text-center hover:bg-planty-green-800 transition-all font-medium" data-i18n="nav.reserve">사전 예약</a>
+                    <div class="flex items-center justify-center space-x-2 pt-4 border-t border-gray-200">
+                        <button data-lang-toggle="ko" class="px-3 py-1.5 rounded hover:bg-gray-100 transition-colors font-bold text-planty-green-700">KO</button>
+                        <span class="text-gray-300">|</span>
+                        <button data-lang-toggle="en" class="px-3 py-1.5 rounded hover:bg-gray-100 transition-colors text-gray-500">EN</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-planty-green-50 to-planty-beige-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block bg-planty-green-100 text-planty-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <i class="fa-solid fa-wand-magic-sparkles mr-2"></i><span data-i18n="bauer.heroTag">Planty AI</span>
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6" data-i18n-html="bauer.heroTitle">
+                Planty AI <span class="text-planty-green-700">Bauer</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="bauer.heroDesc">
+                Bauer는 뭘 심을지부터 수확까지, 내 텃밭을 더 쉽게 만들어주는 Planty의 AI 파트너입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <div class="fade-in glass-card rounded-3xl p-8">
+                    <div class="w-14 h-14 bg-planty-green-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-seedling text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="bauer.overview1Title">Bauer는 무엇을 하나요?</h2>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="bauer.overview1Desc">
+                        기르고 싶은 작물/목표(다이어트, 요리, 이벤트 등)에 맞춰 추천하고,
+                        내 작물 상태를 기반으로 케어 방법을 자연어로 안내합니다.
+                    </p>
+                </div>
+
+                <div class="fade-in glass-card rounded-3xl p-8">
+                    <div class="w-14 h-14 bg-planty-green-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-calendar-check text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="bauer.overview2Title">무제한 사용</h2>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="bauer.overview2Desc">
+                        Bauer 기능은 플랜에 관계없이 사용량 제한 없이 제공됩니다.
+                        차이는 "얼마나 내 상황에 맞춰 깊게" 답변해주느냐예요.
+                    </p>
+                </div>
+
+                <div class="fade-in glass-card rounded-3xl p-8">
+                    <div class="w-14 h-14 bg-planty-green-100 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-shield-heart text-planty-green-700 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="bauer.overview3Title">실제 농장 + 데이터</h2>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="bauer.overview3Desc">
+                        Sprout / Garden에서는 내 작물의 실시간 데이터와 성장 히스토리를 기반으로 더 정교한 답변을 받을 수 있어요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planner -->
+    <section id="planner" class="py-20 bg-planty-beige-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <span class="inline-flex items-center bg-white text-planty-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4 shadow-sm">
+                        <i class="fa-solid fa-compass-drafting mr-2"></i><span data-i18n="bauer.plannerTag">Bauer 재배 플래너</span>
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="bauer.plannerTitle">뭘 심을지 고민될 때, 한 번에 결정</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6" data-i18n="bauer.plannerDesc">
+                        먹고 싶은 음식/행사 일정/난이도/수확 시점을 입력하면, Bauer가 추천 작물과 재배 계획을 만들어줘요.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-2xl p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-gray-900 mb-1" data-i18n="bauer.plannerFeature1Title">추천 작물 선택</p>
+                            <p class="text-sm text-gray-600" data-i18n="bauer.plannerFeature1Desc">목표와 일정에 맞는 작물 제안</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-gray-900 mb-1" data-i18n="bauer.plannerFeature2Title">난이도 & 리스크</p>
+                            <p class="text-sm text-gray-600" data-i18n="bauer.plannerFeature2Desc">초보/중급/고급별 난이도 안내</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-gray-900 mb-1" data-i18n="bauer.plannerFeature3Title">예상 수확량</p>
+                            <p class="text-sm text-gray-600" data-i18n="bauer.plannerFeature3Desc">대략적인 수확 시점/양 안내</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-gray-900 mb-1" data-i18n="bauer.plannerFeature4Title">재배 루틴</p>
+                            <p class="text-sm text-gray-600" data-i18n="bauer.plannerFeature4Desc">물주기/영양제 타이밍 가이드</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100" data-bauer-planner-demo>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-planty-green-100 rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-message text-planty-green-700"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900" data-i18n="bauer.exampleQuestion">예시 질문</p>
+                                <p class="text-gray-600 mt-2">"<span data-i18n="bauer.plannerExampleQ">2주 뒤 집들이가 있어. 6명이서 삼겹살 파티를 할건데 같이 곁들여 먹을 수 있는 작물 추천해줘.</span>"</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 border-t pt-6">
+                            <p class="font-semibold text-gray-900" data-i18n="bauer.bauerThinking">Bauer가 이렇게 생각해요</p>
+                            <div class="mt-3 space-y-2" data-planner-reasoning>
+                                <div class="flex items-start gap-3 text-gray-600" data-planner-step>
+                                    <i class="fa-solid fa-spinner text-planty-green-600 mt-1 shrink-0 animate-spin" aria-hidden="true"></i>
+                                    <span class="min-w-0 keep-all" data-i18n="bauer.plannerStep1">집들이 일정 확인 중 (2주 후)</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-gray-600" data-planner-step>
+                                    <i class="fa-solid fa-spinner text-planty-green-600 mt-1 shrink-0 animate-spin" aria-hidden="true"></i>
+                                    <span class="min-w-0 keep-all" data-i18n="bauer.plannerStep2">2주 내 수확 가능한 작물 후보 생성 중</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-gray-600" data-planner-step>
+                                    <i class="fa-solid fa-spinner text-planty-green-600 mt-1 shrink-0 animate-spin" aria-hidden="true"></i>
+                                    <span class="min-w-0 keep-all" data-i18n="bauer.plannerStep3">달력에 이벤트 등록 & 수확 플랜 구성 중</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 bg-planty-beige-50 rounded-2xl p-5 border border-gray-100" data-planner-reply>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm">
+                                        <i class="fa-solid fa-seedling text-planty-green-700" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p class="font-semibold text-gray-900">Bauer</p>
+                                        <div class="mt-2 inline-flex items-center gap-2 text-gray-500" data-planner-typing aria-live="polite">
+                                            <span class="text-sm" data-i18n="bauer.thinking">생각 중</span>
+                                            <span class="inline-flex items-center gap-1" aria-hidden="true">
+                                                <span class="typing-dot"></span>
+                                                <span class="typing-dot"></span>
+                                                <span class="typing-dot"></span>
+                                            </span>
+                                        </div>
+                                        <div class="mt-3 text-gray-700 keep-all text-base leading-relaxed whitespace-pre-line step-collapsed" data-planner-message data-i18n="bauer.plannerReply" aria-hidden="true">좋아요. 집들이 날짜를 캘린더에 넣고, 2주 안에 수확 가능한 쌈채소 중심으로 플랜을 잡아볼게요.
+일정 기준으로 오늘부터 해야 할 루틴을 자동으로 정리해드릴게요.</div>
+
+                                        <div class="mt-4 step-collapsed" data-planner-cta aria-hidden="true">
+                                            <button type="button" class="inline-flex items-center bg-planty-green-700 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-planty-green-800 transition-colors" onclick="openPlannerModal(true)">
+                                                <i class="fa-solid fa-calendar-days mr-2"></i>
+                                                <span data-i18n="bauer.viewCalendar">달력 & 수확 플랜 보기</span>
+                                            </button>
+                                            <button type="button" class="ml-2 inline-flex items-center bg-white text-planty-green-700 px-4 py-2 rounded-xl text-sm font-semibold border border-planty-green-200 hover:bg-planty-green-50 transition-colors" onclick="openPlannerModal(true)">
+                                                <span data-i18n="bauer.viewAgain">다시 보기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planner Calendar Modal -->
+    <div id="planner-modal" class="planner-modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60" onclick="closePlannerModal()" aria-hidden="true">
+        <div class="planner-modal-content bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-label="일정 추가 및 수확 플랜">
+            <div class="p-6 md:p-8">
+                <div class="flex items-start justify-between gap-6 mb-6">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900">
+                            <i class="fa-solid fa-calendar-days text-planty-green-700 mr-2"></i>
+                            <span data-i18n="bauer.modalTitle">일정 추가 & 수확 플랜</span>
+                        </h3>
+                        <p class="text-sm text-gray-500 mt-1" data-i18n="bauer.modalSubtitle">2주 뒤 집들이에 맞춰 수확 타이밍을 정렬합니다</p>
+                    </div>
+                    <button class="text-gray-400 hover:text-gray-600 text-2xl" onclick="closePlannerModal()" aria-label="닫기">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <p class="font-semibold text-gray-900" data-i18n="bauer.calendar">캘린더</p>
+                            <p class="text-sm text-gray-500" id="planner-calendar-title"></p>
+                        </div>
+                        <div class="mt-3 bg-planty-beige-50 rounded-2xl p-4 border border-gray-100">
+                            <div class="grid grid-cols-7 gap-1 text-xs text-gray-500 mb-2" id="calendar-weekdays">
+                                <div class="text-center" data-i18n="bauer.weekdaySun">일</div><div class="text-center" data-i18n="bauer.weekdayMon">월</div><div class="text-center" data-i18n="bauer.weekdayTue">화</div><div class="text-center" data-i18n="bauer.weekdayWed">수</div><div class="text-center" data-i18n="bauer.weekdayThu">목</div><div class="text-center" data-i18n="bauer.weekdayFri">금</div><div class="text-center" data-i18n="bauer.weekdaySat">토</div>
+                            </div>
+                            <div class="grid grid-cols-7 gap-1" id="planner-calendar-grid"></div>
+                        </div>
+
+                        <div class="mt-5">
+                            <p class="font-semibold text-gray-900" data-i18n="bauer.event">이벤트</p>
+                            <div class="mt-2 flex items-start gap-3 bg-white rounded-2xl p-4 border border-gray-100">
+                                <div class="w-9 h-9 bg-planty-green-100 rounded-xl flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-house text-planty-green-700" aria-hidden="true"></i>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="font-semibold text-gray-900" data-i18n="bauer.housewarming">집들이</p>
+                                    <div class="mt-1 inline-flex items-center gap-2 text-gray-500" id="planner-event-thinking" aria-live="polite">
+                                        <span class="text-sm" data-i18n="bauer.thinking">생각 중</span>
+                                        <span class="inline-flex items-center gap-1" aria-hidden="true">
+                                            <span class="typing-dot"></span>
+                                            <span class="typing-dot"></span>
+                                            <span class="typing-dot"></span>
+                                        </span>
+                                    </div>
+                                    <p class="mt-2 text-sm text-gray-700 step-collapsed" id="planner-event-line" aria-hidden="true"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <p class="font-semibold text-gray-900" data-i18n="bauer.harvestPlan">수확 플랜</p>
+                            <p class="text-sm text-gray-500" id="planner-plan-subtitle"></p>
+                        </div>
+                        <div class="mt-3 bg-white rounded-2xl p-4 border border-gray-100">
+                            <ol class="space-y-3" id="planner-plan-list">
+                                <li class="step-collapsed" data-plan-item aria-hidden="true"></li>
+                                <li class="step-collapsed" data-plan-item aria-hidden="true"></li>
+                                <li class="step-collapsed" data-plan-item aria-hidden="true"></li>
+                                <li class="step-collapsed" data-plan-item aria-hidden="true"></li>
+                                <li class="step-collapsed" data-plan-item aria-hidden="true"></li>
+                                <li class="step-collapsed" data-plan-item aria-hidden="true"></li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-4 text-xs text-gray-500 keep-all" data-i18n="bauer.demoNote">
+                            * 데모 화면입니다. 실제 앱에서는 작물/온실/환경 데이터에 맞춰 자동 조정됩니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coaching -->
+    <section id="coaching" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 fade-in">
+                    <div class="bg-planty-beige-50 rounded-3xl p-8 shadow-sm border border-gray-100" data-bauer-demo>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+                                <i class="fa-solid fa-stethoscope text-planty-green-700"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900" data-i18n="bauer.exampleQuestion">예시 질문</p>
+                                <p class="text-gray-600 mt-2">"<span data-i18n="bauer.coachingExampleQ">저번에 먹은 상추는 다 좋았는데 좀 질긴 느낌이었어. 이번에는 어떻게 길러야 그걸 좀 예방할 수 있을까?</span>"</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 border-t pt-6">
+                            <p class="font-semibold text-gray-900" data-i18n="bauer.bauerThinking">Bauer가 이렇게 생각해요</p>
+                            <div class="mt-3 space-y-2" data-bauer-reasoning>
+                                <div class="flex items-start gap-3 text-gray-600" data-bauer-step>
+                                    <i class="fa-solid fa-spinner text-planty-green-600 mt-1 shrink-0 animate-spin" aria-hidden="true"></i>
+                                    <span class="min-w-0 keep-all" data-i18n="bauer.coachingStep1">지난번 상추 재배 데이터 확인 중</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-gray-600" data-bauer-step>
+                                    <i class="fa-solid fa-spinner text-planty-green-600 mt-1 shrink-0 animate-spin" aria-hidden="true"></i>
+                                    <span class="min-w-0 keep-all" data-i18n="bauer.coachingStep2">일반적 상추와 차이/특징 분석 중</span>
+                                </div>
+                                <div class="flex items-start gap-3 text-gray-600" data-bauer-step>
+                                    <i class="fa-solid fa-spinner text-planty-green-600 mt-1 shrink-0 animate-spin" aria-hidden="true"></i>
+                                    <span class="min-w-0 keep-all" data-i18n="bauer.coachingStep3">제안 refining 하는 중</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 bg-white rounded-2xl p-5 border border-gray-100">
+                                <p class="font-semibold text-gray-900 mb-2" data-i18n="bauer.bauerSuggestion">Bauer의 제안</p>
+                                <div class="flex items-start gap-3" data-bauer-reply>
+                                    <div class="w-10 h-10 bg-planty-green-100 rounded-2xl flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-seedling text-planty-green-700" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p class="font-semibold text-gray-900">Bauer</p>
+                                        <div class="mt-2 inline-flex items-center gap-2 text-gray-500" data-bauer-typing aria-live="polite">
+                                            <span class="text-sm" data-i18n="bauer.thinking">생각 중</span>
+                                            <span class="inline-flex items-center gap-1" aria-hidden="true">
+                                                <span class="typing-dot"></span>
+                                                <span class="typing-dot"></span>
+                                                <span class="typing-dot"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="mt-3 text-gray-700 keep-all text-base leading-relaxed whitespace-pre-line step-collapsed" data-bauer-message data-i18n="bauer.coachingReply" aria-hidden="true">좋아요. 지난번 상추가 "질긴 느낌"이었다면 이번에는 수확 타이밍을 조금 앞당기고, 성장 속도가 과하게 빨라지는 패턴이 보이면 물/영양 리듬을 살짝만 조정해볼게요.
+
+이번 회차는 제가 케어 기록을 보면서 "부드러운 식감" 쪽으로 루틴을 자동으로 튜닝해둘게요.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 fade-in">
+                    <span class="inline-flex items-center bg-planty-green-100 text-planty-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <i class="fa-solid fa-hands-holding-child mr-2"></i><span data-i18n="bauer.coachingTag">Bauer 코칭</span>
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="bauer.coachingTitle">내 작물 상태에 맞춘 케어 가이드</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6" data-i18n-html="bauer.coachingDesc">
+                        Planty는 누구나 부담 없이 시작할 수 있도록, 기본 케어 흐름을 단단하게 설계했어요.
+                        Bauer 코칭은 그 위에 <strong class="text-gray-900">내가 좋아하는 결과(식감/향/수확 타이밍)</strong>에 맞춰 재배 루틴을 세밀하게 다듬어주는 개인화 가이드입니다.
+                        플랜에 따라 내 작물 데이터(실시간/히스토리)를 더 깊게 반영하면서, 제안도 점점 더 정교해져요.
+                    </p>
+
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="rounded-2xl p-5 border border-gray-100">
+                            <p class="text-sm font-semibold text-gray-900">Bauer Free</p>
+                            <p class="text-sm text-gray-600 mt-1" data-i18n="bauer.tierFreeDesc">일반 지식 기반</p>
+                        </div>
+                        <div class="rounded-2xl p-5 border border-gray-100">
+                            <p class="text-sm font-semibold text-gray-900">Bauer Plus</p>
+                            <p class="text-sm text-gray-600 mt-1" data-i18n="bauer.tierPlusDesc">내 작물 실시간 데이터</p>
+                        </div>
+                        <div class="rounded-2xl p-5 border border-gray-100">
+                            <p class="text-sm font-semibold text-gray-900">Bauer Pro</p>
+                            <p class="text-sm text-gray-600 mt-1" data-i18n="bauer.tierProDesc">성장 히스토리 분석</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-planty-green-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-i18n="bauer.ctaTitle">Bauer와 함께 시작해볼까요?</h2>
+            <p class="text-xl text-planty-green-100 mb-8" data-i18n="bauer.ctaDesc">멤버십 플랜에서 Bauer의 깊이가 달라져요</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="pricing.html" class="inline-flex items-center justify-center bg-white text-planty-green-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-planty-green-50 transition-all shadow-lg">
+                    <i class="fa-solid fa-tag mr-3"></i>
+                    <span data-i18n="bauer.ctaPricing">요금제 보기</span>
+                </a>
+                <a href="index.html#reserve" class="inline-flex items-center justify-center bg-planty-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-planty-green-600 transition-all shadow-lg">
+                    <i class="fa-solid fa-hand-holding-seedling mr-3"></i>
+                    <span data-i18n="bauer.ctaReserve">사전 예약하기</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fa-solid fa-seedling text-planty-green-500 text-xl"></i>
+                    <span class="text-xl font-bold text-white">Planty</span>
+                </div>
+                <p class="text-sm text-gray-500">© 2026 Planty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Bauer page-specific scripts
+
+        // Bauer demo animation: reveal steps sequentially, then reveal suggestions
+        const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+        const demos = document.querySelectorAll('[data-bauer-demo]');
+        const plannerDemos = document.querySelectorAll('[data-bauer-planner-demo]');
+
+        function openPlannerModal(animate = true) {
+            const modal = document.getElementById('planner-modal');
+            if (!modal) return;
+
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+
+            if (animate) {
+                runPlannerModalAnimation();
+            }
+        }
+
+        function closePlannerModal() {
+            const modal = document.getElementById('planner-modal');
+            if (!modal) return;
+
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function getCurrentLang() {
+            return window.i18n ? window.i18n.getLanguage() : 'ko';
+        }
+
+        function formatLocalizedDate(date) {
+            const lang = getCurrentLang();
+            const locale = lang === 'en' ? 'en-US' : 'ko-KR';
+            return date.toLocaleDateString(locale, { month: 'long', day: 'numeric', weekday: 'short' });
+        }
+
+        function getTranslation(key) {
+            const lang = getCurrentLang();
+            const keys = key.split('.');
+            let value = window.translations[lang];
+            for (const k of keys) {
+                if (value) value = value[k];
+            }
+            return value || key;
+        }
+
+        function renderCalendar(targetDate) {
+            const titleEl = document.getElementById('planner-calendar-title');
+            const gridEl = document.getElementById('planner-calendar-grid');
+            if (!gridEl || !titleEl) return;
+
+            const lang = getCurrentLang();
+            const year = targetDate.getFullYear();
+            const month = targetDate.getMonth();
+            if (lang === 'en') {
+                const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                titleEl.textContent = `${monthNames[month]} ${year}`;
+            } else {
+                titleEl.textContent = `${year}년 ${month + 1}월`;
+            }
+
+            gridEl.innerHTML = '';
+
+            const firstOfMonth = new Date(year, month, 1);
+            const startDay = firstOfMonth.getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            // 6 rows * 7 = 42 cells
+            const totalCells = 42;
+            const highlightDay = targetDate.getDate();
+            for (let i = 0; i < totalCells; i++) {
+                const dayNumber = i - startDay + 1;
+                const cell = document.createElement('div');
+                cell.className = 'calendar-cell rounded-xl flex items-center justify-center text-sm';
+
+                if (dayNumber < 1 || dayNumber > daysInMonth) {
+                    cell.classList.add('text-gray-300');
+                    cell.textContent = '';
+                } else {
+                    cell.textContent = String(dayNumber);
+                    cell.classList.add('text-gray-700', 'bg-white');
+
+                    if (dayNumber === highlightDay) {
+                        cell.classList.add('calendar-highlight');
+                        cell.dataset.highlight = 'true';
+                    }
+                }
+
+                gridEl.appendChild(cell);
+            }
+        }
+
+        async function runPlannerModalAnimation() {
+            const now = new Date();
+            const eventDate = new Date(now);
+            eventDate.setDate(eventDate.getDate() + 14);
+
+            renderCalendar(eventDate);
+
+            const eventThinking = document.getElementById('planner-event-thinking');
+            const eventLine = document.getElementById('planner-event-line');
+            const planSubtitle = document.getElementById('planner-plan-subtitle');
+            const planItems = Array.from(document.querySelectorAll('#planner-plan-list [data-plan-item]'));
+
+            if (planSubtitle) planSubtitle.textContent = `D-14 → D-day (${formatLocalizedDate(eventDate)})`;
+
+            // Reset
+            if (eventThinking) eventThinking.classList.remove('hidden');
+            if (eventLine) {
+                eventLine.textContent = '';
+                eventLine.classList.add('step-collapsed');
+                eventLine.classList.remove('step-visible');
+                eventLine.setAttribute('aria-hidden', 'true');
+            }
+            planItems.forEach(el => {
+                el.textContent = '';
+                el.classList.add('step-collapsed');
+                el.classList.remove('step-visible');
+                el.setAttribute('aria-hidden', 'true');
+            });
+
+            // Animate calendar highlight pulse
+            const highlightCell = document.querySelector('#planner-calendar-grid [data-highlight="true"]');
+            if (highlightCell) {
+                highlightCell.classList.remove('calendar-pulse');
+            }
+
+            await delay(700);
+
+            if (eventThinking) eventThinking.classList.add('hidden');
+            if (eventLine) {
+                const eventLineTemplate = getTranslation('bauer.eventLineTemplate');
+                eventLine.textContent = eventLineTemplate.replace('{date}', formatLocalizedDate(eventDate));
+                eventLine.classList.add('step-visible');
+                eventLine.classList.remove('step-collapsed');
+                eventLine.setAttribute('aria-hidden', 'false');
+            }
+
+            if (highlightCell) {
+                highlightCell.classList.add('calendar-pulse');
+            }
+
+            const steps = [
+                { offset: -14, text: getTranslation('bauer.planStep1') },
+                { offset: -12, text: getTranslation('bauer.planStep2') },
+                { offset: -9, text: getTranslation('bauer.planStep3') },
+                { offset: -5, text: getTranslation('bauer.planStep4') },
+                { offset: -2, text: getTranslation('bauer.planStep5') },
+                { offset: 0, text: getTranslation('bauer.planStep6') },
+            ];
+
+            const eventTime = eventDate.getTime();
+            for (let i = 0; i < planItems.length; i++) {
+                const item = planItems[i];
+                const step = steps[i];
+                if (!item || !step) continue;
+
+                const d = new Date(eventTime);
+                d.setDate(d.getDate() + step.offset);
+                const label = step.offset === 0 ? 'D-day' : `D${step.offset}`;
+
+                item.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-xl bg-planty-green-50 flex items-center justify-center shrink-0">
+                            <span class="text-xs font-bold text-planty-green-700">${label}</span>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="text-sm font-semibold text-gray-900">${formatLocalizedDate(d)}</p>
+                            <p class="text-sm text-gray-600 keep-all">${step.text}</p>
+                        </div>
+                    </div>
+                `;
+
+                item.classList.add('step-visible');
+                item.classList.remove('step-collapsed');
+                item.setAttribute('aria-hidden', 'false');
+                await delay(380);
+            }
+        }
+
+        const initCollapsed = (elements) => {
+            elements.forEach((el, idx) => {
+                el.classList.add('step-collapsed');
+                el.classList.remove('step-visible');
+                el.setAttribute('aria-hidden', 'true');
+                if (idx === 0) {
+                    // keep first ready to show when animation starts
+                }
+            });
+        };
+
+        async function runBauerDemo(demoEl) {
+            if (demoEl.dataset.animated === 'true') return;
+            demoEl.dataset.animated = 'true';
+
+            const reasoning = demoEl.querySelector('[data-bauer-reasoning]');
+            const steps = reasoning ? Array.from(reasoning.querySelectorAll('[data-bauer-step]')) : [];
+
+            const typing = demoEl.querySelector('[data-bauer-typing]');
+            const message = demoEl.querySelector('[data-bauer-message]');
+
+            // Cache the full reply text once, then stream it later.
+            if (message && !message.dataset.fullText) {
+                const fullText = message.textContent;
+                message.dataset.fullText = fullText;
+                message.textContent = '';
+            }
+
+            // Start collapsed: only reveal when time comes
+            initCollapsed(steps);
+            if (message) {
+                message.classList.add('step-collapsed');
+                message.classList.remove('step-visible');
+                message.setAttribute('aria-hidden', 'true');
+            }
+            if (typing) {
+                typing.classList.remove('hidden');
+            }
+
+            // Reveal + complete each reasoning step one by one
+            for (let i = 0; i < steps.length; i++) {
+                const step = steps[i];
+
+                step.classList.add('step-visible');
+                step.classList.remove('step-collapsed');
+                step.setAttribute('aria-hidden', 'false');
+
+                await delay(800);
+
+                const icon = step.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-spinner', 'animate-spin', 'text-planty-green-600');
+                    icon.classList.add('fa-check', 'text-planty-green-700');
+                }
+                step.classList.remove('text-gray-600');
+                step.classList.add('text-gray-800');
+
+                await delay(450);
+            }
+
+            // Then reveal Bauer reply (hide typing)
+            await delay(250);
+            if (typing) typing.classList.add('hidden');
+            if (message) {
+                message.classList.add('step-visible');
+                message.classList.remove('step-collapsed');
+                message.setAttribute('aria-hidden', 'false');
+
+                const fullText = message.dataset.fullText || '';
+                const tokens = fullText.split(/(\s+)/);
+                for (const token of tokens) {
+                    message.textContent += token;
+                    if (!token.trim()) continue;
+                    await delay(65);
+                }
+            }
+        }
+
+        async function runPlannerDemo(demoEl) {
+            if (demoEl.dataset.animated === 'true') return;
+            demoEl.dataset.animated = 'true';
+
+            const reasoning = demoEl.querySelector('[data-planner-reasoning]');
+            const steps = reasoning ? Array.from(reasoning.querySelectorAll('[data-planner-step]')) : [];
+
+            const typing = demoEl.querySelector('[data-planner-typing]');
+            const message = demoEl.querySelector('[data-planner-message]');
+            const cta = demoEl.querySelector('[data-planner-cta]');
+
+            if (message && !message.dataset.fullText) {
+                const fullText = message.textContent;
+                message.dataset.fullText = fullText;
+                message.textContent = '';
+            }
+
+            initCollapsed(steps);
+            if (message) {
+                message.classList.add('step-collapsed');
+                message.classList.remove('step-visible');
+                message.setAttribute('aria-hidden', 'true');
+            }
+            if (cta) {
+                cta.classList.add('step-collapsed');
+                cta.classList.remove('step-visible');
+                cta.setAttribute('aria-hidden', 'true');
+            }
+            if (typing) typing.classList.remove('hidden');
+
+            for (let i = 0; i < steps.length; i++) {
+                const step = steps[i];
+                step.classList.add('step-visible');
+                step.classList.remove('step-collapsed');
+                step.setAttribute('aria-hidden', 'false');
+
+                await delay(780);
+
+                const icon = step.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-spinner', 'animate-spin', 'text-planty-green-600');
+                    icon.classList.add('fa-check', 'text-planty-green-700');
+                }
+                step.classList.remove('text-gray-600');
+                step.classList.add('text-gray-800');
+
+                await delay(420);
+            }
+
+            await delay(250);
+            if (typing) typing.classList.add('hidden');
+            if (message) {
+                message.classList.add('step-visible');
+                message.classList.remove('step-collapsed');
+                message.setAttribute('aria-hidden', 'false');
+
+                const fullText = message.dataset.fullText || '';
+                const tokens = fullText.split(/(\s+)/);
+                for (const token of tokens) {
+                    message.textContent += token;
+                    if (!token.trim()) continue;
+                    await delay(60);
+                }
+            }
+
+            await delay(200);
+            if (cta) {
+                cta.classList.add('step-visible');
+                cta.classList.remove('step-collapsed');
+                cta.setAttribute('aria-hidden', 'false');
+            }
+        }
+
+        if (demos.length) {
+            const demoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    runBauerDemo(entry.target);
+                });
+            }, { threshold: 0.55 });
+
+            demos.forEach(el => demoObserver.observe(el));
+        }
+
+        if (plannerDemos.length) {
+            const plannerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    runPlannerDemo(entry.target);
+                });
+            }, { threshold: 0.55 });
+
+            plannerDemos.forEach(el => plannerObserver.observe(el));
+        }
+    </script>
+</body>
+</html>
