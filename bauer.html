@@ -771,6 +771,47 @@
 
             plannerDemos.forEach(el => plannerObserver.observe(el));
         }
+
+        // Listen for language changes and reset animations
+        document.addEventListener('click', function(e) {
+            const toggle = e.target.closest('[data-lang-toggle]');
+            if (toggle) {
+                // Reset demo animations after language change
+                setTimeout(function() {
+                    const currentDemos = document.querySelectorAll('[data-bauer-demo]');
+                    const currentPlannerDemos = document.querySelectorAll('[data-bauer-planner-demo]');
+
+                    currentDemos.forEach(el => {
+                        el.dataset.animated = 'false';
+                        const message = el.querySelector('[data-bauer-message]');
+                        if (message && message.dataset.fullText) {
+                            delete message.dataset.fullText;
+                        }
+                    });
+                    currentPlannerDemos.forEach(el => {
+                        el.dataset.animated = 'false';
+                        const message = el.querySelector('[data-planner-message]');
+                        if (message && message.dataset.fullText) {
+                            delete message.dataset.fullText;
+                        }
+                    });
+
+                    // Re-trigger animations if elements are in view
+                    currentDemos.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight * 0.8) {
+                            runBauerDemo(el);
+                        }
+                    });
+                    currentPlannerDemos.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight * 0.8) {
+                            runPlannerDemo(el);
+                        }
+                    });
+                }, 150);
+            }
+        });
     </script>
 </body>
 </html>
