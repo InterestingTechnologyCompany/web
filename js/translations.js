@@ -326,7 +326,7 @@ window.translations = {
         // Bauer page
         bauer: {
             heroTag: "Planty AI",
-            heroTitle: 'Planty AI <span class="text-planty-green-700">Bauer</span>',
+            heroTitle: '<span class="text-planty-green-700">Planty Bauer</span>',
             heroDesc: "Bauer는 뭘 심을지부터 수확까지, 내 텃밭을 더 쉽게 만들어주는 Planty의 AI 파트너입니다.",
             overview1Title: "Bauer는 무엇을 하나요?",
             overview1Desc: "기르고 싶은 작물/목표(다이어트, 요리, 이벤트 등)에 맞춰 추천하고, 내 작물 상태를 기반으로 케어 방법을 자연어로 안내합니다.",
@@ -756,7 +756,7 @@ window.translations = {
         // Bauer page
         bauer: {
             heroTag: "Planty AI",
-            heroTitle: 'Planty AI <span class="text-planty-green-700">Bauer</span>',
+            heroTitle: '<span class="text-planty-green-700">Planty Bauer</span>',
             heroDesc: "From what to plant to harvest, Bauer is Planty's AI partner that makes your garden easier.",
             overview1Title: "What does Bauer do?",
             overview1Desc: "Recommends crops based on your goals (diet, cooking, events, etc.) and provides natural language guidance for care based on your crop's condition.",
