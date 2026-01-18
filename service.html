@@ -92,9 +92,8 @@
                         Planty는 <strong class="text-planty-green-700">원격 텃밭 서비스</strong>입니다.
                         실제 농장에 당신만의 작물이 배정되고, 스마트폰으로 작물을 관찰하고 돌볼 수 있어요.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-8" data-i18n="service.whatIsDesc2">
-                        앱에서 버튼을 누르면 실제로 물이 공급되고, 다 자란 작물은 신선하게 배송됩니다.
-                        마치 게임처럼 쉽지만, 수확물은 100% 진짜예요.
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8" data-i18n-html="service.whatIsDesc2">
+                        앱에서 버튼을 누르면 <strong>실제로 물이 공급</strong>되고, 다 자란 작물은 신선하게 <strong>배송</strong>됩니다. 마치 게임처럼 쉽지만, 수확물은 100% 진짜예요.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         <span class="bg-planty-green-50 text-planty-green-700 px-4 py-2 rounded-full text-sm font-medium" data-i18n="service.tagFarm">🌱 실제 농장</span>
@@ -212,14 +211,72 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
+    <footer class="bg-gray-900 text-gray-400 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <i class="fa-solid fa-seedling text-planty-green-500 text-xl"></i>
-                    <span class="text-xl font-bold text-white">Planty</span>
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa-solid fa-seedling text-planty-green-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white">Planty</span>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed mb-6" data-i18n-html="footer.desc">
+                        당신만의 원격 텃밭, Planty.<br>
+                        공간과 시간의 제약 없이 내 손으로 기르는 신선한 즐거움.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/planty.farm" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Plantyfarm" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://github.com/InterestingTechnologyCompany" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
                 </div>
-                <p class="text-sm text-gray-500" data-i18n="footer.copyright">© 2026 Planty. All rights reserved.</p>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.serviceTitle">서비스</h4>
+                    <ul class="space-y-3">
+                        <li><a href="service.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.service">서비스 소개</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.howItWorks">이용 방법</a></li>
+                        <li><a href="vision.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.vision">비전</a></li>
+                        <li><a href="pricing.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.pricing">요금제</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.contactTitle">연락처</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.email">contact@planty.farm</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.phone">02-1234-5678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mr-3 text-planty-green-500 mt-1"></i>
+                            <span data-i18n-html="footer.address">서울특별시 강남구<br>테헤란로 123</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500 mb-4 md:mb-0" data-i18n="footer.copyright">
+                    © 2026 Planty. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.terms">이용약관</a>
+                    <a href="#" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.privacy">개인정보처리방침</a>
+                    <a href="#" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.business">사업자정보</a>
+                </div>
             </div>
         </div>
     </footer>

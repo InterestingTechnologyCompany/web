@@ -70,15 +70,15 @@
     <!-- Hero -->
     <section class="pt-32 pb-20 bg-gradient-to-b from-planty-green-50 to-planty-beige-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="inline-block bg-planty-green-100 text-planty-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6" data-i18n-html="bauer.heroSlogan">
+                오래 생각하지 마세요.<br><span class="text-planty-green-700">부담 없이 물어보세요.</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8" data-i18n="bauer.heroDesc">
+                뭘 심을지 모르겠다고요? Bauer에게 물어보세요.
+            </p>
+            <span class="inline-block bg-planty-green-100 text-planty-green-700 px-4 py-2 rounded-full text-sm font-semibold">
                 <i class="fa-solid fa-wand-magic-sparkles mr-2"></i><span data-i18n="bauer.heroTag">Planty AI</span>
             </span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6" data-i18n-html="bauer.heroTitle">
-                <span class="text-planty-green-700">Planty Bauer</span>
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="bauer.heroDesc">
-                Bauer는 뭘 심을지부터 수확까지, 내 텃밭을 더 쉽게 만들어주는 Planty의 AI 파트너입니다.
-            </p>
         </div>
     </section>
 
@@ -403,14 +403,72 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
+    <footer class="bg-gray-900 text-gray-400 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <i class="fa-solid fa-seedling text-planty-green-500 text-xl"></i>
-                    <span class="text-xl font-bold text-white">Planty</span>
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa-solid fa-seedling text-planty-green-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white">Planty</span>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed mb-6" data-i18n-html="footer.desc">
+                        당신만의 원격 텃밭, Planty.<br>
+                        공간과 시간의 제약 없이 내 손으로 기르는 신선한 즐거움.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/planty.farm" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Plantyfarm" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://github.com/InterestingTechnologyCompany" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
                 </div>
-                <p class="text-sm text-gray-500">© 2026 Planty. All rights reserved.</p>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.serviceTitle">서비스</h4>
+                    <ul class="space-y-3">
+                        <li><a href="service.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.service">서비스 소개</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.howItWorks">이용 방법</a></li>
+                        <li><a href="vision.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.vision">비전</a></li>
+                        <li><a href="pricing.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.pricing">요금제</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.contactTitle">연락처</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.email">contact@planty.farm</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.phone">02-1234-5678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mr-3 text-planty-green-500 mt-1"></i>
+                            <span data-i18n-html="footer.address">서울특별시 강남구<br>테헤란로 123</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500 mb-4 md:mb-0" data-i18n="footer.copyright">
+                    © 2026 Planty. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.terms">이용약관</a>
+                    <a href="#" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.privacy">개인정보처리방침</a>
+                    <a href="#" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.business">사업자정보</a>
+                </div>
             </div>
         </div>
     </footer>
