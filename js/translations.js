@@ -244,7 +244,7 @@ window.translations = {
             targetInvestment: "목표 투자금: 10억원",
             keyMetrics: "주요 지표",
             metric1: "• MAU 50,000+ (목표)",
-            metric2: "• MRR 월 2억원 (목표)",
+            metric2: "• MRR 월 1.5억원 (목표)",
             metric3: "• 재구독률 85%",
             irRequest: "IR 자료 요청 및 미팅",
             irDesc: "IR 덱, 사업계획서, 재무제표 등 상세 자료가 필요하시면 아래로 연락해주세요.",
