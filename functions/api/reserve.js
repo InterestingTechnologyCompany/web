@@ -101,33 +101,23 @@ function buildEmailHtml(lang) {
 
     const t = isKo ? {
         preheader: 'Planty 사전 예약 확인',
-        greeting: '반갑습니다!',
-        title: '사전 예약이 완료되었습니다',
-        desc: '당신만의 원격 텃밭, Planty에 관심을 가져주셔서 감사합니다.',
-        highlight: '첫 가입 혜택',
-        benefit1: '첫 작물 무료',
-        benefit2: '배송비 1회 무료',
-        nextTitle: '다음 단계는?',
-        next1: '서비스 출시 시 가장 먼저 알려드립니다',
-        next2: '얼리버드 혜택이 자동 적용됩니다',
-        next3: '별도로 할 일은 없어요. 기다려주세요!',
-        closing: '신선한 즐거움을 곧 만나보세요.',
+        greeting: '안녕하세요!',
+        title: 'Planty에 관심을 가져주셔서 정말 정말 감사합니다',
+        body1: '저희는 지금 서비스를 궤도에 올리기 위해 최선을 다하고 있습니다. 더 좋은 모습으로 찾아뵐 수 있도록 열심히 준비하고 있으니 조금만 기다려주세요.',
+        body2: '궁금한 점이 있으시면 언제든지 편하게 연락주세요. 기다리고 있겠습니다.',
+        contactLabel: '문의하기',
+        closing: '곧 만나뵙겠습니다.',
         team: 'Planty 팀 드림',
         footer: '본 메일은 planty.farm 사전 예약을 통해 발송되었습니다.',
         unsubNote: '더 이상 수신을 원치 않으시면 이 메일에 회신해주세요.',
     } : {
         preheader: 'Planty Pre-order Confirmation',
-        greeting: 'Welcome!',
-        title: "You're on the list",
-        desc: 'Thank you for your interest in Planty — your own remote garden.',
-        highlight: 'Early Bird Benefits',
-        benefit1: 'Free first crop',
-        benefit2: 'Free shipping (once)',
-        nextTitle: "What's next?",
-        next1: "We'll notify you first when we launch",
-        next2: 'Your early bird benefits will be applied automatically',
-        next3: 'Nothing to do — just sit tight!',
-        closing: "Fresh joy is on its way.",
+        greeting: 'Hello!',
+        title: 'Thank you so so so much for your interest in Planty',
+        body1: "We're working hard right now to get our service off the ground. We're putting in our best effort to bring you something great, so please bear with us a little longer.",
+        body2: "If you have any questions, don't hesitate to reach out anytime. We'll be waiting to hear from you.",
+        contactLabel: 'Contact Us',
+        closing: "We'll see you soon.",
         team: 'The Planty Team',
         footer: 'This email was sent because you pre-ordered at planty.farm.',
         unsubNote: "If you'd like to unsubscribe, simply reply to this email.",
@@ -152,30 +142,15 @@ function buildEmailHtml(lang) {
 <!-- Body -->
 <tr><td style="padding:40px;">
     <p style="margin:0 0 8px;font-size:15px;color:#66BB6A;font-weight:600;">${t.greeting}</p>
-    <h2 style="margin:0 0 16px;font-size:24px;font-weight:700;color:#1B5E20;">${t.title}</h2>
-    <p style="margin:0 0 32px;font-size:15px;line-height:1.7;color:#555;">${t.desc}</p>
+    <h2 style="margin:0 0 24px;font-size:24px;font-weight:700;color:#1B5E20;">${t.title}</h2>
+    <p style="margin:0 0 16px;font-size:15px;line-height:1.8;color:#555;">${t.body1}</p>
+    <p style="margin:0 0 32px;font-size:15px;line-height:1.8;color:#555;">${t.body2}</p>
 
-    <!-- Benefits Card -->
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#E8F5E9;border-radius:16px;margin-bottom:32px;">
-    <tr><td style="padding:24px 28px;">
-        <p style="margin:0 0 12px;font-size:13px;font-weight:700;color:#2E7D32;text-transform:uppercase;letter-spacing:1px;">${t.highlight}</p>
-        <table role="presentation" cellpadding="0" cellspacing="0">
-        <tr>
-            <td style="padding:4px 0;font-size:15px;color:#1B5E20;">&#10003;&nbsp;&nbsp;${t.benefit1}</td>
-        </tr>
-        <tr>
-            <td style="padding:4px 0;font-size:15px;color:#1B5E20;">&#10003;&nbsp;&nbsp;${t.benefit2}</td>
-        </tr>
-        </table>
+    <!-- Contact Button -->
+    <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto 32px;">
+    <tr><td style="background:#2E7D32;border-radius:12px;">
+        <a href="mailto:contact@planty.farm" style="display:inline-block;padding:14px 32px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;">&#9993;&nbsp;&nbsp;${t.contactLabel}</a>
     </td></tr>
-    </table>
-
-    <!-- Next Steps -->
-    <h3 style="margin:0 0 12px;font-size:16px;font-weight:700;color:#333;">${t.nextTitle}</h3>
-    <table role="presentation" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
-    <tr><td style="padding:6px 0;font-size:14px;line-height:1.6;color:#555;">1. ${t.next1}</td></tr>
-    <tr><td style="padding:6px 0;font-size:14px;line-height:1.6;color:#555;">2. ${t.next2}</td></tr>
-    <tr><td style="padding:6px 0;font-size:14px;line-height:1.6;color:#555;">3. ${t.next3}</td></tr>
     </table>
 
     <!-- Closing -->
