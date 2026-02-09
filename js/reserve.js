@@ -32,7 +32,7 @@ function handleReserve(e) {
     btn.style.opacity = '0.6';
 
     var source = location.pathname.replace(/\//g, '').replace('.html', '') || 'index';
-    var lang = (window.currentLang || document.documentElement.lang || 'ko');
+    var lang = (window.i18n && window.i18n.getLanguage()) || 'ko';
 
     fetch('/api/reserve', {
         method: 'POST',
@@ -78,7 +78,7 @@ function showMsg(el, text, type) {
 }
 
 function getText(key) {
-    var lang = (window.currentLang || document.documentElement.lang || 'ko');
+    var lang = (window.i18n && window.i18n.getLanguage()) || 'ko';
     var t = window.translations;
     if (t && t[lang] && t[lang].common && t[lang].common[key]) {
         return t[lang].common[key];
