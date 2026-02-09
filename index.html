@@ -29,7 +29,7 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-20">
                 <!-- Logo -->
-                <a href="#" class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2">
                     <i class="fa-solid fa-seedling text-planty-green-700 text-2xl"></i>
                     <span class="text-2xl font-bold text-planty-green-800">Planty</span>
                 </a>
@@ -123,7 +123,7 @@
                         <!-- Floating Badge -->
                         <div class="absolute top-4 right-4 glass-card rounded-2xl px-4 py-3">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                <div class="w-3 h-3 bg-planty-green-500 rounded-full animate-pulse"></div>
                                 <span class="text-sm font-medium text-gray-700" data-i18n="index.liveStreaming">실시간 스트리밍</span>
                             </div>
                         </div>
@@ -305,10 +305,10 @@
                     지금, 당신의 텃밭을 시작하세요
                 </h2>
                 <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto" data-i18n="index.ctaDesc">
-                    사전 예약 시 첫 달 무료 + 프리미엄 씨앗 키트 증정
+                    사전 예약 시 첫 달 무료
                 </p>
 
-                <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-8">
+                <form class="reserve-form flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-4">
                     <input type="email"
                            data-i18n-placeholder="index.emailPlaceholder"
                            placeholder="이메일을 입력하세요"
@@ -319,6 +319,7 @@
                         사전 예약하기
                     </button>
                 </form>
+                <p class="reserve-msg text-sm text-center mb-4" style="opacity:0;"></p>
 
                 <p class="text-sm text-gray-400">
                     <i class="fa-solid fa-shield-halved mr-2"></i>
@@ -375,12 +376,8 @@
                             <span data-i18n="footer.email">contact@planty.farm</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fa-solid fa-phone mr-3 text-planty-green-500"></i>
-                            <span data-i18n="footer.phone">02-1234-5678</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-location-dot mr-3 text-planty-green-500 mt-1"></i>
-                            <span data-i18n-html="footer.address">서울특별시 강남구<br>테헤란로 123</span>
+                            <i class="fa-solid fa-earth-asia mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.address">Eurasia, Earth</span>
                         </li>
                     </ul>
                 </div>
@@ -399,5 +396,6 @@
         </div>
     </footer>
 
+    <script src="js/reserve.js"></script>
 </body>
 </html>
