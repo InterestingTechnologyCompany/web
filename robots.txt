@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://planty.farm/sitemap.xml
+LLMs-txt: https://planty.farm/llms.txt

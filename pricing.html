@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>요금제 - Planty</title>
-    <meta name="description" content="Planty 요금제 - Sprout, Forest 플랜으로 나에게 맞는 텃밭 선택">
+    <meta name="description" content="Planty 요금제 - Sprout(무료, 박스 1개) / Forest(월 11,000원, 모종 제공, AI 자동관리, 월 1회 무료배송). 첫 가입 시 배송 1회 무료.">
     <meta name="keywords" content="스마트팜, 원격텃밭, IoT, 채소재배, 도시농업, 스마트농업">
     <meta property="og:title" content="요금제 - Planty">
-    <meta property="og:description" content="Sprout, Forest 플랜으로 나에게 맞는 텃밭 선택">
+    <meta property="og:description" content="Sprout(무료, 박스 1개) / Forest(월 11,000원, 모종 제공, AI 자동관리, 월 1회 무료배송). 첫 가입 시 배송 1회 무료.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://planty.farm/pricing.html">
     <meta property="og:image" content="https://planty.farm/og-image.jpg">
@@ -53,6 +53,54 @@
           }
         }
       ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Planty 요금제",
+      "description": "Planty 원격 텃밭 서비스 요금제 - Sprout(무료) / Forest(월 11,000원)",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "Planty Sprout 플랜",
+              "description": "평생 무료 원격 텃밭. 표준 박스 1개, 씨앗부터 시작, 수확까지 4~5주 소요.",
+              "brand": {"@type": "Brand", "name": "Planty"},
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "KRW",
+                "availability": "https://schema.org/PreOrder",
+                "description": "평생 무료. 배송비 4,000원/회 별도."
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "Planty Forest 플랜",
+              "description": "프리미엄 원격 텃밭. 다 자란 모종 제공, 수확까지 1~2주, AI 자동관리, 냉장 보관, 월 1회 무료 배송.",
+              "brand": {"@type": "Brand", "name": "Planty"},
+              "offers": {
+                "@type": "Offer",
+                "price": "11000",
+                "priceCurrency": "KRW",
+                "unitCode": "MON",
+                "availability": "https://schema.org/PreOrder",
+                "description": "월 11,000원 (추가 박스 1개당). 무료 박스 1개 기본 포함. 월 1회 무료 배송."
+              }
+            }
+          }
+        ]
+      }
     }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
