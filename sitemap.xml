@@ -31,6 +31,21 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://planty.farm/terms.html</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://planty.farm/privacy.html</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://planty.farm/business.html</loc>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://planty.farm/llms.txt</loc>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>

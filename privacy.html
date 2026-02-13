@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - Planty</title>
+    <meta name="description" content="Planty 개인정보처리방침 - 회원의 개인정보를 어떻게 수집, 이용, 보호하는지 안내합니다.">
+    <meta name="keywords" content="스마트팜, 원격텃밭, 개인정보처리방침">
+    <meta property="og:title" content="개인정보처리방침 - Planty">
+    <meta property="og:description" content="Planty 개인정보처리방침 - 회원의 개인정보를 어떻게 수집, 이용, 보호하는지 안내합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://planty.farm/privacy.html">
+    <meta property="og:image" content="https://planty.farm/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://planty.farm/privacy.html">
+    <meta name="theme-color" content="#15803d">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body class="font-sans text-gray-800 bg-planty-beige-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fa-solid fa-seedling text-planty-green-700 text-2xl"></i>
+                    <span class="text-2xl font-bold text-planty-green-800">Planty</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="service.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.service">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.howItWorks">이용 방법</a>
+                    <a href="bauer.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">Bauer</a>
+                    <a href="vision.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.vision">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.pricing">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full hover:bg-planty-green-800 transition-all transform hover:scale-105 font-medium" data-i18n="nav.reserve">사전 예약</a>
+                    <div class="flex items-center space-x-1 text-sm border-l pl-6 ml-2 border-gray-200">
+                        <button data-lang-toggle="ko" class="px-2 py-1 rounded hover:bg-gray-100 transition-colors font-bold text-planty-green-700">KO</button>
+                        <span class="text-gray-300">|</span>
+                        <button data-lang-toggle="en" class="px-2 py-1 rounded hover:bg-gray-100 transition-colors text-gray-500">EN</button>
+                    </div>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-planty-green-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="service.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.service">서비스 소개</a>
+                    <a href="how-it-works.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.howItWorks">이용 방법</a>
+                    <a href="bauer.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium">Bauer</a>
+                    <a href="vision.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.vision">비전</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-planty-green-700 transition-colors font-medium" data-i18n="nav.pricing">요금제</a>
+                    <a href="index.html#reserve" class="bg-planty-green-700 text-white px-6 py-2.5 rounded-full text-center hover:bg-planty-green-800 transition-all font-medium" data-i18n="nav.reserve">사전 예약</a>
+                    <div class="flex items-center justify-center space-x-2 pt-4 border-t border-gray-200">
+                        <button data-lang-toggle="ko" class="px-3 py-1.5 rounded hover:bg-gray-100 transition-colors font-bold text-planty-green-700">KO</button>
+                        <span class="text-gray-300">|</span>
+                        <button data-lang-toggle="en" class="px-3 py-1.5 rounded hover:bg-gray-100 transition-colors text-gray-500">EN</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <section class="pt-28 pb-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 fade-in">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="privacy.title">개인정보처리방침</h1>
+                <p class="text-gray-500" data-i18n="privacy.effectiveDate">시행일: 2026년 1월 1일</p>
+            </div>
+
+            <div class="prose prose-gray max-w-none space-y-10">
+
+                <!-- 개요 -->
+                <div class="fade-in">
+                    <p class="text-gray-600 leading-relaxed" data-i18n="privacy.intro">주식회사 인터레스팅테크놀로지컴퍼니(이하 "회사")는 「개인정보 보호법」에 따라 회원의 개인정보를 보호하고, 이와 관련한 고충을 신속하게 처리하기 위하여 다음과 같은 개인정보처리방침을 수립·공개합니다.</p>
+                </div>
+
+                <!-- 제1조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article1Title">제1조 (수집하는 개인정보 항목)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article1Desc">회사는 서비스 제공을 위해 다음과 같은 개인정보를 수집합니다.</p>
+                    <div class="bg-planty-beige-50 rounded-xl p-5 space-y-3">
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-1" data-i18n="privacy.article1Required">필수 항목</p>
+                            <p class="text-gray-600 text-sm" data-i18n="privacy.article1RequiredItems">이메일 주소, 비밀번호, 이름(닉네임), 배송지 주소, 연락처</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-1" data-i18n="privacy.article1Optional">선택 항목</p>
+                            <p class="text-gray-600 text-sm" data-i18n="privacy.article1OptionalItems">프로필 사진, 재배 선호도(선호 작물, 식감, 향 등)</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-1" data-i18n="privacy.article1Auto">자동 수집 항목</p>
+                            <p class="text-gray-600 text-sm" data-i18n="privacy.article1AutoItems">접속 IP, 접속 일시, 서비스 이용 기록, 기기 정보(OS, 브라우저 종류)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 제2조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article2Title">제2조 (개인정보의 수집 및 이용 목적)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article2Desc">수집된 개인정보는 다음의 목적으로 이용됩니다.</p>
+                    <ol class="text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                        <li data-i18n="privacy.article2Item1">회원 식별 및 가입 의사 확인, 본인 인증</li>
+                        <li data-i18n="privacy.article2Item2">서비스 제공 및 요금 정산 (재배 박스 배정, 수확물 배송 등)</li>
+                        <li data-i18n="privacy.article2Item3">Bauer AI 맞춤형 재배 코칭 및 추천 서비스 제공</li>
+                        <li data-i18n="privacy.article2Item4">고객 문의 응대 및 불만 처리</li>
+                        <li data-i18n="privacy.article2Item5">서비스 개선을 위한 통계 분석 및 연구</li>
+                        <li data-i18n="privacy.article2Item6">Bauer AI 모델 학습 및 알고리즘 개선 (비식별 처리 후 활용)</li>
+                        <li data-i18n="privacy.article2Item7">마케팅 및 이벤트 안내 (동의한 경우에 한함)</li>
+                    </ol>
+                </div>
+
+                <!-- 제3조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article3Title">제3조 (개인정보의 보유 및 이용 기간)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article3Desc">회사는 개인정보 수집·이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관련 법령에 따라 보존이 필요한 경우 또는 서비스 개선 및 분쟁 대응을 위해 필요한 경우 해당 기간 동안 보관합니다.</p>
+                    <div class="bg-planty-beige-50 rounded-xl p-5">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left py-2 font-semibold text-gray-800" data-i18n="privacy.article3ColReason">보존 근거</th>
+                                    <th class="text-left py-2 font-semibold text-gray-800" data-i18n="privacy.article3ColItem">보존 항목</th>
+                                    <th class="text-left py-2 font-semibold text-gray-800" data-i18n="privacy.article3ColPeriod">보존 기간</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600">
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-2" data-i18n="privacy.article3Row1Reason">전자상거래법</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row1Item">계약·청약철회 기록</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row1Period">5년</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-2" data-i18n="privacy.article3Row2Reason">전자상거래법</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row2Item">대금 결제·재화 공급 기록</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row2Period">5년</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-2" data-i18n="privacy.article3Row3Reason">전자상거래법</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row3Item">소비자 불만·분쟁처리 기록</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row3Period">3년</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2" data-i18n="privacy.article3Row4Reason">통신비밀보호법</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row4Item">접속 로그 기록</td>
+                                    <td class="py-2" data-i18n="privacy.article3Row4Period">3개월</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 제4조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article4Title">제4조 (개인정보의 제3자 제공)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article4Desc">회사는 원칙적으로 회원의 개인정보를 외부에 제공하지 않습니다. 다만, 다음의 경우에는 예외로 합니다.</p>
+                    <ol class="text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                        <li data-i18n="privacy.article4Item1">회원이 사전에 동의한 경우</li>
+                        <li data-i18n="privacy.article4Item2">법령에 의거하거나 수사기관의 요청이 있는 경우</li>
+                        <li data-i18n="privacy.article4Item3">배송 서비스 이행을 위해 배송업체에 필요 최소한의 정보(이름, 주소, 연락처)를 제공하는 경우</li>
+                        <li data-i18n="privacy.article4Item4">회사의 합병, 영업양도, 사업 구조 변경 등으로 개인정보의 이전이 필요한 경우 (사전 공지 후 진행)</li>
+                    </ol>
+                </div>
+
+                <!-- 제5조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article5Title">제5조 (개인정보의 처리 위탁)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article5Desc">회사는 원활한 서비스 제공을 위해 다음과 같이 개인정보 처리 업무를 위탁합니다.</p>
+                    <div class="bg-planty-beige-50 rounded-xl p-5">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left py-2 font-semibold text-gray-800" data-i18n="privacy.article5ColCompany">수탁업체</th>
+                                    <th class="text-left py-2 font-semibold text-gray-800" data-i18n="privacy.article5ColTask">위탁 업무</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600">
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-2" data-i18n="privacy.article5Row1Company">택배 업체</td>
+                                    <td class="py-2" data-i18n="privacy.article5Row1Task">수확물 배송</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="py-2" data-i18n="privacy.article5Row2Company">결제 대행사</td>
+                                    <td class="py-2" data-i18n="privacy.article5Row2Task">요금 결제 처리</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2" data-i18n="privacy.article5Row3Company">클라우드 서비스 제공업체</td>
+                                    <td class="py-2" data-i18n="privacy.article5Row3Task">데이터 저장 및 처리 인프라 운영</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 제6조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article6Title">제6조 (개인정보의 파기)</h2>
+                    <ol class="text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                        <li data-i18n="privacy.article6Item1">회원 탈퇴 시 또는 개인정보 수집·이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.</li>
+                        <li data-i18n="privacy.article6Item2">전자적 파일 형태의 정보는 복구할 수 없는 방법으로 삭제하며, 종이에 출력된 정보는 분쇄기로 파쇄합니다.</li>
+                        <li data-i18n="privacy.article6Item3">다만, 비식별화 처리를 완료한 데이터는 통계·연구·AI 학습 목적으로 파기 대상에서 제외될 수 있습니다.</li>
+                    </ol>
+                </div>
+
+                <!-- 제7조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article7Title">제7조 (이용자의 권리와 행사 방법)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article7Desc">회원은 언제든지 다음의 권리를 행사할 수 있습니다.</p>
+                    <ol class="text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                        <li data-i18n="privacy.article7Item1">개인정보 열람 요구</li>
+                        <li data-i18n="privacy.article7Item2">오류 등이 있을 경우 정정 요구</li>
+                        <li data-i18n="privacy.article7Item3">삭제 요구</li>
+                        <li data-i18n="privacy.article7Item4">처리 정지 요구</li>
+                    </ol>
+                    <p class="text-gray-600 leading-relaxed mt-3" data-i18n="privacy.article7Method">위 권리는 앱 내 설정 메뉴 또는 이메일(contact@planty.farm)을 통해 행사할 수 있으며, 회사는 지체 없이 조치를 취합니다.</p>
+                </div>
+
+                <!-- 제8조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article8Title">제8조 (개인정보의 안전성 확보 조치)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article8Desc">회사는 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취합니다.</p>
+                    <ol class="text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                        <li data-i18n="privacy.article8Item1">비밀번호 등 중요 정보의 암호화 저장 및 전송</li>
+                        <li data-i18n="privacy.article8Item2">해킹 등에 대비한 보안 시스템 설치 및 주기적 점검</li>
+                        <li data-i18n="privacy.article8Item3">개인정보 취급 직원의 최소화 및 교육 실시</li>
+                        <li data-i18n="privacy.article8Item4">개인정보에 대한 접근 권한 관리 및 접근 통제</li>
+                    </ol>
+                </div>
+
+                <!-- 제9조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article9Title">제9조 (쿠키의 사용)</h2>
+                    <ol class="text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                        <li data-i18n="privacy.article9Item1">회사는 개인화된 서비스를 제공하기 위해 쿠키를 사용합니다.</li>
+                        <li data-i18n="privacy.article9Item2">쿠키는 웹사이트 운영에 이용되는 서버가 이용자의 브라우저에 보내는 소량의 정보로, 이용자의 컴퓨터에 저장됩니다.</li>
+                        <li data-i18n="privacy.article9Item3">이용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있으나, 이 경우 일부 서비스 이용에 제한이 있을 수 있습니다.</li>
+                    </ol>
+                </div>
+
+                <!-- 제10조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article10Title">제10조 (개인정보 보호책임자)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article10Desc">회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 관련 불만 처리 및 피해 구제를 위해 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+                    <div class="bg-planty-beige-50 rounded-xl p-5 space-y-2 text-sm">
+                        <p class="text-gray-600"><span class="font-semibold text-gray-800" data-i18n="privacy.article10LabelName">성명:</span> <span data-i18n="privacy.article10Name">최동훈</span></p>
+                        <p class="text-gray-600"><span class="font-semibold text-gray-800" data-i18n="privacy.article10LabelPosition">직위:</span> <span data-i18n="privacy.article10Position">대표이사 (CEO)</span></p>
+                        <p class="text-gray-600"><span class="font-semibold text-gray-800" data-i18n="privacy.article10LabelEmail">연락처:</span> <a href="mailto:contact@planty.farm" class="text-planty-green-700 hover:underline">contact@planty.farm</a></p>
+                    </div>
+                </div>
+
+                <!-- 제11조 -->
+                <div class="fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.article11Title">제11조 (권익침해 구제방법)</h2>
+                    <p class="text-gray-600 leading-relaxed mb-3" data-i18n="privacy.article11Desc">개인정보 침해에 대한 신고나 상담이 필요한 경우 아래 기관에 문의할 수 있습니다.</p>
+                    <ul class="text-gray-600 leading-relaxed space-y-2 list-disc list-inside text-sm">
+                        <li data-i18n="privacy.article11Agency1">개인정보침해신고센터 (privacy.kisa.or.kr / 국번없이 118)</li>
+                        <li data-i18n="privacy.article11Agency2">개인정보분쟁조정위원회 (www.kopico.go.kr / 1833-6972)</li>
+                        <li data-i18n="privacy.article11Agency3">대검찰청 사이버수사과 (www.spo.go.kr / 국번없이 1301)</li>
+                        <li data-i18n="privacy.article11Agency4">경찰청 사이버수사국 (ecrm.cyber.go.kr / 국번없이 182)</li>
+                    </ul>
+                </div>
+
+                <!-- 부칙 -->
+                <div class="fade-in border-t border-gray-200 pt-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-3" data-i18n="privacy.supplementTitle">부칙</h2>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="privacy.supplementContent">이 개인정보처리방침은 2026년 1월 1일부터 시행합니다.</p>
+                </div>
+
+                <!-- Contact -->
+                <div class="fade-in bg-planty-beige-50 rounded-2xl p-6">
+                    <p class="text-gray-600" data-i18n-html="privacy.contact">개인정보 관련 문의사항은 <a href="mailto:contact@planty.farm" class="text-planty-green-700 font-medium hover:underline">contact@planty.farm</a>으로 연락해주세요.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa-solid fa-seedling text-planty-green-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white">Planty</span>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed mb-6" data-i18n-html="footer.desc">
+                        당신만의 원격 텃밭, Planty.<br>
+                        공간과 시간의 제약 없이 내 손으로 기르는 신선한 즐거움.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/planty.farm" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Plantyfarm" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://github.com/InterestingTechnologyCompany" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-planty-green-700 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.serviceTitle">서비스</h4>
+                    <ul class="space-y-3">
+                        <li><a href="service.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.service">서비스 소개</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.howItWorks">이용 방법</a></li>
+                        <li><a href="vision.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.vision">비전</a></li>
+                        <li><a href="pricing.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.pricing">요금제</a></li>
+                        <li><a href="bauer.html" class="hover:text-planty-green-400 transition-colors" data-i18n="nav.bauer">Bauer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.contactTitle">연락처</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.email">contact@planty.farm</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-earth-asia mr-3 text-planty-green-500"></i>
+                            <span data-i18n="footer.address">Eurasia, Earth</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500 mb-4 md:mb-0" data-i18n="footer.copyright">
+                    © 2026 Planty. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="terms.html" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.terms">이용약관</a>
+                    <a href="privacy.html" class="text-planty-green-400 transition-colors" data-i18n="footer.privacy">개인정보처리방침</a>
+                    <a href="business.html" class="hover:text-planty-green-400 transition-colors" data-i18n="footer.business">사업자정보</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
